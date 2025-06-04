@@ -4,8 +4,7 @@
   "main": "main.js",
   "scripts": {
     "sass": "sass src/sass/style.scss:src/style.css --no-source-map --watch",
-    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:assets && npm run build:html",
-    "build:test": "npm run clean && npm run build:js && npm run build:assets && npm run build:html"
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:assets && npm run build:html"
   },
   "keywords": [
     "task, interview"
