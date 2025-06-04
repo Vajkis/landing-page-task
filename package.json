@@ -1,0 +1,21 @@
+{
+  "name": "landing-page-task",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass src/sass/style.scss:src/style.css --no-source-map --watch",
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:assets && npm run build:html",
+    "build:test": "npm run clean && npm run build:js && npm run build:assets && npm run build:html"
+  },
+  "keywords": [
+    "task, interview"
+  ],
+  "author": "Vajkis",
+  "license": "MIT",
+  "type": "commonjs",
+  "description": "Task for job interview",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "sass": "^1.89.1"
+  }
+}
