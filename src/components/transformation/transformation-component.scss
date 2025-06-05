@@ -1,0 +1,44 @@
+@use '../../scss/globals' as *;
+
+.transformation {
+  padding: 0 20px 40px;
+
+  &__title {
+    max-width: 400px;
+    margin: 40px auto;
+
+    text-align: center;
+  }
+
+  &__items-container {
+    display: grid;
+    gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 20px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__items-container {
+      grid-template-columns: repeat(2, 250px);
+      justify-content: center;
+    }
+
+    &__item-icon {
+      min-width: 40px;
+      max-width: 40px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &__items-container {
+      grid-template-columns: repeat(3, 250px);
+    }
+
+    &__item:hover > .transformation__item-icon {
+      @include icon-hover;
+    }
+  }
+}
