@@ -1,0 +1,59 @@
+@use '../../scss/globals' as *;
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  margin: 30px 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(4, 150px);
+    justify-content: center;
+
+    margin: 40px;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(4, 220px);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+    background-color: $color-gray;
+    border-radius: 15px;
+
+    &-icon {
+      height: 48px;
+    }
+
+    &-text {
+      max-width: 120px;
+    }
+
+    &--small {
+      .benefits__item-text {
+        max-width: 90px;
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      flex-direction: row;
+
+      &:hover > &-icon {
+        @include icon-hover;
+      }
+
+      &-text {
+        text-align: start;
+      }
+    }
+  }
+}

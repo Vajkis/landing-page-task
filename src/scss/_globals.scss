@@ -14,3 +14,8 @@ $color-red: #c2110e;
   color: $color-white;
   text-align: center;
 }
+
+@mixin icon-hover {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(89%) saturate(2522%)
+    hue-rotate(346deg) brightness(96%) contrast(114%);
+}
