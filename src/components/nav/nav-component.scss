@@ -1,0 +1,29 @@
+@use '../../scss/variables' as *;
+
+.nav {
+  &__container {
+    display: none;
+    padding: 0 20px;
+
+    gap: 20px;
+
+    @media (min-width: $breakpoint-desktop) {
+      padding: 0;
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__menu {
+      display: none;
+    }
+
+    &__container {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+a,
+body,
+button {
+  all: unset;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+  position: sticky;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+}
+.header__nav-container {
+  flex: 1;
+}
+.header__logo-container {
+  flex: 1;
+}
+.header__logo {
+  display: block;
+  width: 101px;
+  height: 26;
+  transform: translateX(-50%) scale(0.6);
+}
+@media (min-width: 768px) {
+  .header__logo {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.nav__container {
+  display: none;
+  padding: 0 20px;
+  gap: 20px;
+}
+@media (min-width: 1024px) {
+  .nav__container {
+    padding: 0;
+    justify-content: center;
+  }
+}
+.nav__link {
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .nav__menu {
+    display: none;
+  }
+  .nav__container {
+    display: flex;
+  }
+}
+
+.menu__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 13px;
+  cursor: pointer;
+}
+.menu__button-line-1, .menu__button-line-2, .menu__button-line-3 {
+  width: 100%;
+  height: 1px;
+  background-color: #0b0a0c;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu__button--show .menu__button-line-1 {
+  transform: translateY(6px) rotate(-135deg);
+}
+.menu__button--show .menu__button-line-2 {
+  opacity: 0;
+}
+.menu__button--show .menu__button-line-3 {
+  transform: translateY(-6px) rotate(135deg);
+}
+.menu__container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: calc(100vw - 30px);
+  height: calc(100vh - 90px);
+  padding: 15px;
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu__button--show + .menu__container {
+  transform: translateX(0);
+  opacity: 1;
+}
+.menu__link {
+  padding: 10px;
+  border: solid 0 #0b0a0c;
+  border-width: 0 0 1px;
+}

@@ -1,0 +1,36 @@
+@use '../../scss/variables' as *;
+
+.header {
+  position: sticky;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+
+  padding: 15px 20px;
+  background-color: $color-gray;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 20px;
+  }
+
+  &__nav-container {
+    flex: 1;
+  }
+
+  &__logo-container {
+    flex: 1;
+  }
+
+  &__logo {
+    display: block;
+    width: 101px;
+    height: 26;
+
+    transform: translateX(-50%) scale(0.6);
+
+    @media (min-width: $breakpoint-tablet) {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+}
