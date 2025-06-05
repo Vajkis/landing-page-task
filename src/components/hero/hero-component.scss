@@ -1,0 +1,61 @@
+@use '../../scss/globals' as *;
+
+.hero {
+  position: relative;
+
+  aspect-ratio: 9 / 16;
+  width: 100%;
+
+  background-image: url('./assets/main-img-mobile.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-width: $breakpoint-tablet) {
+    aspect-ratio: 3 / 4;
+
+    background-image: url('./assets/main-img-tablet.jpg');
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    aspect-ratio: 11 / 4;
+
+    background-image: url('./assets/main-img-desktop.jpg');
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    min-width: 350px;
+
+    transform: translate(-50%, -50%);
+    color: $color-white;
+
+    @media (min-width: $breakpoint-tablet) {
+      min-width: 550px;
+      max-width: 550px;
+    }
+  }
+
+  &__link {
+    @include link-button($color-red);
+
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+
+    width: calc(100% - 60px);
+
+    transform: translateX(-50%);
+
+    @media (min-width: $breakpoint-tablet) {
+      bottom: 155px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      bottom: 50px;
+    }
+  }
+}

@@ -1,17 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 a,
 body,
-button {
+button,
+h1 {
   all: unset;
 }
 
-body {
+body * {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 a,
 button {
   -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
 .header {
@@ -114,4 +121,63 @@ button {
   padding: 10px;
   border: solid 0 #0b0a0c;
   border-width: 0 0 1px;
+}
+
+.hero {
+  position: relative;
+  aspect-ratio: 9/16;
+  width: 100%;
+  background-image: url("./assets/main-img-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .hero {
+    aspect-ratio: 3/4;
+    background-image: url("./assets/main-img-tablet.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .hero {
+    aspect-ratio: 11/4;
+    background-image: url("./assets/main-img-desktop.jpg");
+  }
+}
+.hero__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 350px;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    min-width: 550px;
+    max-width: 550px;
+  }
+}
+.hero__link {
+  max-width: 360px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #c2110e;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  width: calc(100% - 60px);
+  transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+  .hero__link {
+    bottom: 155px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__link {
+    bottom: 50px;
+  }
 }
