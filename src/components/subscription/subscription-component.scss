@@ -1,0 +1,89 @@
+@use '../../scss/globals' as *;
+
+.subscription {
+  position: relative;
+
+  height: 250px;
+  padding: 0 90px 0 20px;
+
+  background-color: $color-black;
+
+  &__title {
+    position: absolute;
+    right: 0;
+
+    display: block;
+    color: $color-white;
+
+    transform: rotate(-90deg) translate(-110px, 60px);
+  }
+
+  &__conditions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+
+    height: 100%;
+  }
+
+  &__condition {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__condition-icon {
+    max-width: 20px;
+  }
+
+  &__condition-text {
+    color: $color-white;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 40px;
+    height: unset;
+
+    &__conditions-container {
+      flex-direction: row;
+    }
+
+    &__title {
+      position: static;
+      transform: none;
+    }
+
+    &__condition {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      &--size-100 {
+        max-width: 100px;
+      }
+
+      &--size-120 {
+        max-width: 120px;
+      }
+
+      &--size-150 {
+        max-width: 150px;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &__condition {
+      transition: transform 0.3s ease;
+    }
+
+    &__condition:hover {
+      transform: scale(1.2);
+    }
+  }
+}

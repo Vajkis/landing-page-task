@@ -3,6 +3,7 @@ a,
 body,
 button,
 h1,
+h2,
 p {
   all: unset;
 }
@@ -20,6 +21,12 @@ h1 {
   text-align: center;
   font-size: 3rem;
   font-weight: 800;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .header {
@@ -231,5 +238,75 @@ h1 {
   }
   .benefits__item-text {
     text-align: start;
+  }
+}
+
+.subscription {
+  position: relative;
+  height: 250px;
+  padding: 0 90px 0 20px;
+  background-color: #0b0a0c;
+}
+.subscription__title {
+  position: absolute;
+  right: 0;
+  display: block;
+  color: #ffffff;
+  transform: rotate(-90deg) translate(-110px, 60px);
+}
+.subscription__conditions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+}
+.subscription__condition {
+  display: flex;
+  gap: 20px;
+}
+.subscription__condition-icon {
+  max-width: 20px;
+}
+.subscription__condition-text {
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .subscription {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    height: unset;
+  }
+  .subscription__conditions-container {
+    flex-direction: row;
+  }
+  .subscription__title {
+    position: static;
+    transform: none;
+  }
+  .subscription__condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .subscription__condition--size-100 {
+    max-width: 100px;
+  }
+  .subscription__condition--size-120 {
+    max-width: 120px;
+  }
+  .subscription__condition--size-150 {
+    max-width: 150px;
+  }
+}
+@media (min-width: 1024px) {
+  .subscription__condition {
+    transition: transform 0.3s ease;
+  }
+  .subscription__condition:hover {
+    transform: scale(1.2);
   }
 }
