@@ -46,8 +46,6 @@
     bottom: 40px;
     left: 50%;
 
-    width: calc(100% - 60px);
-
     transform: translateX(-50%);
 
     @media (min-width: $breakpoint-tablet) {

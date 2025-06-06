@@ -1,0 +1,58 @@
+@use '../../scss/globals' as *;
+
+.carousel-item {
+  &__title {
+    margin: 0 20px 30px;
+  }
+
+  &__description,
+  &__sub-description {
+    display: block;
+    margin: 30px 20px;
+    text-align: center;
+  }
+
+  &__items-container {
+    display: grid;
+    grid-template-columns: repeat(2, 115px);
+    gap: 30px;
+
+    width: calc(2 * 115px + 30px);
+    margin: auto;
+  }
+
+  &__item-img {
+    width: 112px;
+  }
+
+  &__item-text {
+    text-align: center;
+    margin: auto;
+
+    &--small {
+      width: 90px;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__item-text--small {
+      width: 100px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__text {
+      max-width: 350px;
+    }
+
+    &__title,
+    &__description,
+    &__sub-description {
+      text-align: start;
+    }
+  }
+}

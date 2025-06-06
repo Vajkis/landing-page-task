@@ -8,12 +8,24 @@ $color-red: #c2110e;
 $color-rose: #f9e8e7;
 
 @mixin link-button($color: $color-black) {
+  display: block;
+  width: calc(100% - 60px);
   max-width: 360px;
   padding: 15px;
   border-radius: 15px;
   background-color: $color;
   color: $color-white;
   text-align: center;
+  font-size: 1.5rem;
+
+  &:hover {
+    @if $color == $color-black {
+      filter: brightness(3);
+    }
+    @if $color == $color-red {
+      filter: brightness(1.1);
+    }
+  }
 }
 
 @mixin icon-hover {

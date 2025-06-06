@@ -1,0 +1,55 @@
+@use '../../scss/globals' as *;
+
+.carousel {
+  overflow: hidden;
+  max-width: 550px;
+  margin: auto;
+
+  &__items-container {
+    display: flex;
+
+    transition: transform 0.3s ease;
+  }
+
+  &__item {
+    min-width: 100%;
+    opacity: 0;
+
+    transition: opacity 0.15s ease;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__paginator {
+    margin: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    &-dots-container {
+      display: flex;
+      gap: 12px;
+    }
+
+    &-dot {
+      width: 10px;
+      height: 10px;
+
+      border: solid 1px $color-black;
+      border-radius: 50%;
+
+      transition: background-color 0.3s ease;
+
+      &--active {
+        background-color: $color-black;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 720px;
+  }
+}
