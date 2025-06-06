@@ -1,0 +1,233 @@
+@use '../../scss/globals' as *;
+
+.process {
+  padding: 40px 20px;
+
+  background-color: $color-white;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    &-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+    }
+
+    &:not(:last-child):after {
+      position: absolute;
+      width: 37px;
+      height: 30px;
+
+      bottom: -50px;
+    }
+
+    &--left {
+      align-items: flex-start;
+      margin-right: 100px;
+
+      &:not(:last-child):after {
+        content: url('./assets/arrow-down-right.svg');
+        left: 50vw;
+        transform: translateX(-100%);
+      }
+    }
+
+    &--right {
+      align-items: flex-end;
+      margin-left: 100px;
+      text-align: end;
+
+      &:not(:last-child):after {
+        content: url('./assets/arrow-down-left.svg');
+        right: 50vw;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__items-container {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+
+      &::before,
+      &::after {
+        content: '';
+        position: relative;
+        left: 50%;
+        z-index: 1;
+
+        display: block;
+        width: 12px;
+        height: 12px;
+        background-color: $color-gray;
+        border-radius: 50%;
+      }
+
+      &::before {
+        transform: translate(-50%, 8px);
+      }
+
+      &::after {
+        transform: translate(-50%, -8px);
+      }
+    }
+
+    &__item {
+      padding-top: 20px;
+      &-icon {
+        position: absolute;
+        bottom: 0;
+
+        margin: 0;
+        padding: 20px;
+
+        background-color: $color-white;
+        border-radius: 50%;
+      }
+
+      &-description {
+        position: relative;
+        display: block;
+
+        padding-bottom: 10px;
+        border-bottom: solid 4px $color-gray;
+        top: 0;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+
+          width: 12px;
+          height: 12px;
+
+          background-color: $color-gray;
+          border-radius: 50%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 80px !important;
+        height: 80px !important;
+
+        bottom: 0 !important;
+
+        border: solid 4px $color-gray;
+        border-bottom-color: $color-white;
+        border-left-color: $color-white;
+        border-radius: 50%;
+      }
+    }
+
+    &__item--left,
+    &__item--right {
+      &:not(:last-child):after {
+        content: '';
+        left: unset;
+        right: unset;
+        bottom: unset;
+        transform: none;
+      }
+    }
+
+    &__item--left {
+      margin-right: calc(50% - 2px);
+      padding-right: 50px;
+
+      border-right: solid 4px $color-gray;
+
+      .process__item-icon {
+        right: 0;
+        transform: translateX(46px);
+      }
+
+      .process__item-description::after {
+        left: 0;
+      }
+
+      &::after {
+        right: 0 !important;
+        transform: translateX(44px) rotate(45deg) !important;
+      }
+    }
+
+    &__item--right {
+      margin-left: calc(50% - 2px);
+      padding-left: 50px;
+
+      border-left: solid 4px $color-gray;
+
+      .process__item-icon {
+        left: 0;
+        transform: translateX(-46px);
+      }
+
+      .process__item-description::after {
+        right: 0;
+      }
+
+      &::after {
+        left: 0 !important;
+        transform: translateX(-44px) rotate(-135deg) !important;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    &__item {
+      padding-top: 60px;
+
+      &--left {
+        align-items: flex-end;
+        text-align: end;
+
+        .process__item-description {
+          border-image: linear-gradient(
+            to right,
+            $color-white 0%,
+            $color-white 30%,
+            $color-gray 30%,
+            $color-gray 100%
+          );
+          border-image-slice: 1;
+
+          &::after {
+            left: 30%;
+          }
+        }
+      }
+
+      &--right {
+        align-items: flex-start;
+        text-align: start;
+
+        .process__item-description {
+          border-image: linear-gradient(
+            to left,
+            $color-white 0%,
+            $color-white 30%,
+            $color-gray 30%,
+            $color-gray 100%
+          );
+          border-image-slice: 1;
+
+          &::after {
+            right: 30%;
+          }
+        }
+      }
+    }
+  }
+}
