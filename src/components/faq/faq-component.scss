@@ -21,7 +21,7 @@
       gap: 40px;
       justify-content: space-between;
 
-      transition: margin 01.15s 01.15s;
+      transition: margin 0.15s 0.15s;
     }
 
     &-button {
@@ -39,7 +39,7 @@
 
       padding-right: 65px;
 
-      transition: margin 01.15s;
+      transition: margin 0.15s;
 
       & > * {
         margin: 0;
@@ -47,24 +47,24 @@
         font-size: 0;
         overflow: hidden;
         transition:
-          margin 01.15s 01.15s,
-          opacity 01.15s,
-          font-size 01.15s 01.15s;
+          margin 0.15s 0.15s,
+          opacity 0.15s,
+          font-size 0.15s 0.15s;
       }
     }
 
     &-sub-title {
       transition:
-        margin 01.15s,
-        opacity 01.15s 01.15,
-        font-size 01.15s;
+        margin 0.15s,
+        opacity 0.15s 0.15,
+        font-size 0.15s;
     }
   }
 
   &__item--active {
     .faq__item-top-container {
       margin-bottom: 20px;
-      transition: margin 01.15s;
+      transition: margin 0.15s;
     }
 
     .faq__item-button-icon {
@@ -75,20 +75,20 @@
       opacity: 1;
       font-size: 1rem;
       transition:
-        opacity 01.15s 01.15s,
-        font-size 01.15s;
+        opacity 0.15s 0.15s,
+        font-size 0.15s;
     }
 
     .faq__item-sub-title {
       transition:
-        margin 01.15s 01.15,
-        opacity 01.15s,
-        font-size 01.15s 01.15s;
+        margin 0.15s 01.15,
+        opacity 0.15s,
+        font-size 0.15s 0.15s;
     }
 
     .faq__item-sub-title:not(:first-child) {
       margin-top: 20px;
-      // transition: margin 01.15s 01.15s;
+      // transition: margin 0.15s 0.15s;
     }
   }
 
