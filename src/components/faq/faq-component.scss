@@ -1,0 +1,88 @@
+@use '../../scss/globals' as *;
+
+.faq {
+  padding: 40px 20px;
+
+  background-color: $color-gray;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    &-top-container {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+
+      transition: margin 0.15s 0.15s;
+    }
+
+    &-button {
+      align-self: flex-start;
+      width: 24px;
+    }
+
+    &-button-icon {
+      transition: transform 0.3s;
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+
+      padding-right: 65px;
+
+      transition: margin 0.15s;
+
+      & > * {
+        opacity: 0;
+        font-size: 0;
+        overflow: hidden;
+        transition:
+          opacity 0.15s,
+          font-size 0.15s 0.15s;
+      }
+    }
+
+    &-sub-title:not(:first-child) {
+      transition: margin 0.15s 0.15s;
+    }
+  }
+
+  &__item--active {
+    .faq__item-top-container {
+      margin-bottom: 20px;
+      transition: margin 0.15s;
+    }
+
+    .faq__item-button-icon {
+      transform: rotateX(180deg);
+    }
+
+    .faq__item-description > * {
+      margin-bottom: 20px;
+      opacity: 1;
+      font-size: 1rem;
+      transition:
+        margin 0.15s 0.15s,
+        opacity 0.15s 0.15s,
+        font-size 0.15s;
+    }
+
+    .faq__time-sub-title:not(:first-child) {
+      margin-top: 20px;
+      transition: margin 0.15s 0.15s;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 40px calc((100% - 800px) / 2);
+  }
+}
