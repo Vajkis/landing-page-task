@@ -716,9 +716,6 @@ h4 {
   overflow: hidden;
   transition: margin 0.15s 0.15s, opacity 0.15s, font-size 0.15s 0.15s;
 }
-.faq__item-sub-title {
-  transition: margin 0.15s, opacity 0.15s 0.15, font-size 0.15s;
-}
 .faq__item--active .faq__item-top-container {
   margin-bottom: 20px;
   transition: margin 0.15s;
@@ -730,9 +727,6 @@ h4 {
   opacity: 1;
   font-size: 1rem;
   transition: opacity 0.15s 0.15s, font-size 0.15s;
-}
-.faq__item--active .faq__item-sub-title {
-  transition: margin 0.15s 1.15, opacity 0.15s, font-size 0.15s 0.15s;
 }
 .faq__item--active .faq__item-sub-title:not(:first-child) {
   margin-top: 20px;

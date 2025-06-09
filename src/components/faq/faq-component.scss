@@ -52,13 +52,6 @@
           font-size 0.15s 0.15s;
       }
     }
-
-    &-sub-title {
-      transition:
-        margin 0.15s,
-        opacity 0.15s 0.15,
-        font-size 0.15s;
-    }
   }
 
   &__item--active {
@@ -79,16 +72,8 @@
         font-size 0.15s;
     }
 
-    .faq__item-sub-title {
-      transition:
-        margin 0.15s 01.15,
-        opacity 0.15s,
-        font-size 0.15s 0.15s;
-    }
-
     .faq__item-sub-title:not(:first-child) {
       margin-top: 20px;
-      // transition: margin 0.15s 0.15s;
     }
   }
 
